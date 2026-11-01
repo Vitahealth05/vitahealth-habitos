@@ -1,0 +1,329 @@
+/*
+ * VitaHealth - Hoja de estilos principal.
+ * Convención de nombres: BEM (bloque__elemento--modificador).
+ * Paleta tomada del prototipo: verdes de salud y tonos neutros.
+ */
+
+:root {
+  --color-primario: #2e7d5b;
+  --color-primario-oscuro: #1f5a41;
+  --color-acento: #f2a541;
+  --color-fondo: #f4f7f5;
+  --color-superficie: #ffffff;
+  --color-texto: #1d2b24;
+  --color-texto-suave: #5d6d65;
+  --color-borde: #d7e1db;
+  --color-error: #c0392b;
+  --radio: 12px;
+  --sombra: 0 2px 8px rgba(29, 43, 36, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.5;
+}
+
+/* ---------- Encabezado ---------- */
+.encabezado {
+  background: var(--color-primario);
+  color: #fff;
+  padding: 1.25rem 1rem;
+  text-align: center;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.marca__logo {
+  font-size: 1.8rem;
+}
+
+.marca__nombre {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.encabezado__lema {
+  margin: 0.25rem 0 0;
+  opacity: 0.9;
+}
+
+/* ---------- Estructura ---------- */
+.contenedor {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+.columnas {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 860px) {
+  .columnas {
+    grid-template-columns: 360px 1fr;
+    align-items: start;
+  }
+}
+
+.panel {
+  background: var(--color-superficie);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  padding: 1.25rem;
+}
+
+.panel h2 {
+  margin: 0 0 1rem;
+  font-size: 1.2rem;
+  color: var(--color-primario-oscuro);
+}
+
+.panel__cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.panel__cabecera h2 {
+  margin: 0;
+}
+
+/* ---------- Resumen ---------- */
+.resumen {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.tarjeta-dato {
+  background: var(--color-superficie);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  padding: 0.9rem;
+  text-align: center;
+}
+
+.tarjeta-dato__valor {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-primario);
+}
+
+.tarjeta-dato__texto {
+  font-size: 0.85rem;
+  color: var(--color-texto-suave);
+}
+
+/* ---------- Formulario ---------- */
+label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0.75rem 0 0.25rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  font: inherit;
+  background: #fff;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--color-primario);
+  border-color: transparent;
+}
+
+.fila {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.acciones {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.errores {
+  color: var(--color-error);
+  font-size: 0.85rem;
+  padding-left: 1.1rem;
+  margin: 0.75rem 0 0;
+}
+
+/* ---------- Botones ---------- */
+.boton {
+  border: none;
+  border-radius: 8px;
+  padding: 0.55rem 1rem;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.boton--primario {
+  background: var(--color-primario);
+  color: #fff;
+}
+
+.boton--primario:hover {
+  background: var(--color-primario-oscuro);
+}
+
+.boton--secundario {
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  border: 1px solid var(--color-borde);
+}
+
+.boton--peligro {
+  background: transparent;
+  color: var(--color-error);
+}
+
+.boton--pequeno {
+  padding: 0.35rem 0.6rem;
+  font-size: 0.85rem;
+}
+
+/* ---------- Lista de hábitos ---------- */
+.lista-habitos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.habito {
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  padding: 0.9rem;
+}
+
+.habito--cumplido {
+  border-color: var(--color-primario);
+  background: #eef7f2;
+}
+
+.habito__cabecera {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.habito__nombre {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.habito__etiqueta {
+  display: inline-block;
+  font-size: 0.75rem;
+  background: var(--color-fondo);
+  border-radius: 999px;
+  padding: 0.1rem 0.6rem;
+  color: var(--color-texto-suave);
+}
+
+.habito__descripcion {
+  margin: 0.35rem 0;
+  color: var(--color-texto-suave);
+  font-size: 0.9rem;
+}
+
+.habito__racha {
+  font-size: 0.85rem;
+  color: var(--color-acento);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.progreso {
+  height: 10px;
+  background: var(--color-fondo);
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 0.5rem 0 0.25rem;
+}
+
+.progreso__barra {
+  height: 100%;
+  background: var(--color-primario);
+  transition: width 0.3s ease;
+}
+
+.habito__progreso-texto {
+  font-size: 0.85rem;
+  color: var(--color-texto-suave);
+}
+
+.habito__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+
+.lista-vacia {
+  color: var(--color-texto-suave);
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+/* ---------- Utilidades ---------- */
+.oculto {
+  display: none !important;
+}
+
+.aviso {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-texto);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.aviso--visible {
+  opacity: 1;
+}
+
+.pie {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--color-texto-suave);
+  padding: 1.5rem 1rem;
+}
