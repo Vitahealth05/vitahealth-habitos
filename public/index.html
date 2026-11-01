@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="VitaHealth - Gestión de hábitos saludables" />
+    <title>VitaHealth | Mis hábitos</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Encabezado de la aplicación -->
+    <header class="encabezado">
+      <div class="marca">
+        <span class="marca__logo" aria-hidden="true">🌿</span>
+        <h1 class="marca__nombre">VitaHealth</h1>
+      </div>
+      <p class="encabezado__lema">Pequeños hábitos, grandes cambios</p>
+    </header>
+
+    <main class="contenedor">
+      <!-- Resumen del día -->
+      <section class="resumen" aria-label="Resumen del día">
+        <article class="tarjeta-dato">
+          <span class="tarjeta-dato__valor" id="total-habitos">0</span>
+          <span class="tarjeta-dato__texto">Hábitos activos</span>
+        </article>
+        <article class="tarjeta-dato">
+          <span class="tarjeta-dato__valor" id="cumplidos-hoy">0</span>
+          <span class="tarjeta-dato__texto">Metas cumplidas hoy</span>
+        </article>
+        <article class="tarjeta-dato">
+          <span class="tarjeta-dato__valor" id="mejor-racha">0</span>
+          <span class="tarjeta-dato__texto">Mejor racha (días)</span>
+        </article>
+      </section>
+
+      <div class="columnas">
+        <!-- Formulario: crear / editar hábito (HU-01, HU-03) -->
+        <section class="panel" aria-labelledby="titulo-formulario">
+          <h2 id="titulo-formulario">Nuevo hábito</h2>
+          <form id="form-habito" novalidate>
+            <input type="hidden" id="habito-id" />
+
+            <label for="nombre">Nombre *</label>
+            <input type="text" id="nombre" maxlength="60" required placeholder="Ej: Tomar agua" />
+
+            <label for="descripcion">Descripción</label>
+            <textarea
+              id="descripcion"
+              maxlength="200"
+              rows="2"
+              placeholder="¿Por qué es importante para ti?"
+            ></textarea>
+
+            <div class="fila">
+              <div>
+                <label for="categoria">Categoría *</label>
+                <select id="categoria" required></select>
+              </div>
+              <div>
+                <label for="frecuencia">Frecuencia *</label>
+                <select id="frecuencia" required></select>
+              </div>
+            </div>
+
+            <div class="fila">
+              <div>
+                <label for="meta">Meta diaria *</label>
+                <input type="number" id="meta" min="0.5" step="0.5" required placeholder="8" />
+              </div>
+              <div>
+                <label for="unidad">Unidad</label>
+                <input type="text" id="unidad" maxlength="20" placeholder="vasos" />
+              </div>
+            </div>
+
+            <ul id="errores-formulario" class="errores" role="alert"></ul>
+
+            <div class="acciones">
+              <button type="submit" class="boton boton--primario" id="boton-guardar">Guardar hábito</button>
+              <button type="button" class="boton boton--secundario oculto" id="boton-cancelar">Cancelar</button>
+            </div>
+          </form>
+        </section>
+
+        <!-- Listado de hábitos (HU-02, HU-04, HU-05, HU-06) -->
+        <section class="panel" aria-labelledby="titulo-lista">
+          <div class="panel__cabecera">
+            <h2 id="titulo-lista">Mis hábitos</h2>
+            <select id="filtro-categoria" aria-label="Filtrar por categoría">
+              <option value="">Todas las categorías</option>
+            </select>
+          </div>
+          <p id="lista-vacia" class="lista-vacia oculto">Aún no tienes hábitos. ¡Crea el primero!</p>
+          <ul id="lista-habitos" class="lista-habitos"></ul>
+        </section>
+      </div>
+    </main>
+
+    <!-- Mensajes emergentes -->
+    <div id="aviso" class="aviso" role="status" aria-live="polite"></div>
+
+    <footer class="pie">VitaHealth © 2026 · SENA ADSO · Módulo de Gestión de Hábitos</footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
