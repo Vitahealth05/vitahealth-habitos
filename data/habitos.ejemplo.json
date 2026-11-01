@@ -1,0 +1,38 @@
+[
+  {
+    "id": "0b1c6f6e-6f1a-4f7d-9c1e-2a7c3b9d1e01",
+    "nombre": "Tomar agua",
+    "descripcion": "Mantenerme hidratada durante el día",
+    "categoria": "hidratacion",
+    "frecuencia": "diaria",
+    "meta": 8,
+    "unidad": "vasos",
+    "activo": true,
+    "fechaCreacion": "2026-10-25T13:00:00.000Z",
+    "registros": []
+  },
+  {
+    "id": "5d2e8a40-3b7c-4b8e-a1d2-9f6e4c3b2a02",
+    "nombre": "Caminar",
+    "descripcion": "Caminata para activar el cuerpo",
+    "categoria": "actividad_fisica",
+    "frecuencia": "diaria",
+    "meta": 30,
+    "unidad": "minutos",
+    "activo": true,
+    "fechaCreacion": "2026-10-25T13:05:00.000Z",
+    "registros": []
+  },
+  {
+    "id": "9a7f1c22-8d4e-4e6b-b3f5-1c2d3e4f5a03",
+    "nombre": "Dormir bien",
+    "descripcion": "Descanso reparador",
+    "categoria": "sueno",
+    "frecuencia": "diaria",
+    "meta": 8,
+    "unidad": "horas",
+    "activo": true,
+    "fechaCreacion": "2026-10-25T13:10:00.000Z",
+    "registros": []
+  }
+]
