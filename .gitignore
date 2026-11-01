@@ -1,0 +1,18 @@
+# Dependencias (se instalan con npm install)
+node_modules/
+
+# Datos locales generados al usar la aplicación
+data/*.json
+data/*.tmp
+!data/habitos.ejemplo.json
+
+# Variables de entorno y registros
+.env
+*.log
+npm-debug.log*
+
+# Sistema operativo / editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
